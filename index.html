@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>MADSACK PDF Interstitial</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <img src="logo.png" alt="MADSACK Logo" class="logo" />
+      <div class="copyright">KI Modul © Sven Kalisch</div>
+    </header>
+
+    <main class="main">
+      <section class="controls">
+        <div class="control-group">
+          <label for="outputFormat">Ausgabeformat</label>
+          <select id="outputFormat">
+            <option value="interstitial">
+              Interstitial (jpg, 3983px x 2734 px)
+            </option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="pdfInput">PDF hochladen</label>
+          <input type="file" id="pdfInput" accept="application/pdf" />
+        </div>
+
+        <div class="control-group">
+          <label for="zoomRange">Zoom</label>
+          <div class="zoom-controls">
+            <button type="button" id="zoomMinus" class="zoom-button">−</button>
+            <input type="range" id="zoomRange" min="0.5" max="3" step="0.01" value="1" />
+            <button type="button" id="zoomPlus" class="zoom-button">+</button>
+          </div>
+        </div>
+
+        <button id="downloadBtn" disabled>Download JPG</button>
+      </section>
+
+      <section class="preview-section">
+        <div class="preview-wrapper">
+          <div id="previewFrame">
+            <canvas id="previewCanvas"></canvas>
+          </div>
+          <p class="hint">
+            Vorschau zeigt die Fläche des finalen Interstitials, nur skaliert. Zoom und Verschieben wirken direkt auf das Endergebnis.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
